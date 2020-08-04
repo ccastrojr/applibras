@@ -7,8 +7,6 @@ import {
   Container,
   VideoList,
   VideoContainer,
-  VideoPlayer,
-  IconPlay,
   VideoTitle,
   TagsWrapper,
   Tag,
@@ -70,10 +68,6 @@ const Dashboard: React.FC = () => {
         keyExtractor={(videoData : Video) => videoData.id}
         renderItem={({ item } : { item : Video}) => (
           <VideoContainer>
-            <VideoPlayer>
-              <IconPlay name="play" size={60} color="#424242" />
-            </VideoPlayer>
-
             <VideoTitle>{item.title}</VideoTitle>
 
             <TagsWrapper>
