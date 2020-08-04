@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions } from 'react-native';
+import { Dimensions, Linking } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import { useRoute } from '@react-navigation/native';
 
@@ -30,6 +30,15 @@ interface Params {
 const Sinal: React.FC = () => {
   const route = useRoute();
   const routeParams = route.params as Params;
+  
+  async function handleComposeMail(){
+
+    const url = 'mailto:lidialopes@acad.ifma.edu.br?subject=Sugestão de Correção'
+
+    if(await Linking.canOpenURL(url)){
+      Linking.openURL(url);
+    }    
+  }
 
   return (
     <Container>
@@ -56,7 +65,7 @@ const Sinal: React.FC = () => {
         <Description>{routeParams.description}</Description>
       </SignInfo>
 
-      <Button>Sugerir Correção</Button>
+      <Button onPress={handleComposeMail}>Sugerir Correção</Button>
     </Container>
   );
 };
