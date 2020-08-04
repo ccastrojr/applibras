@@ -7,6 +7,7 @@ import {
   Container,
   VideoList,
   VideoContainer,
+  SignImage,
   VideoTitle,
   TagsWrapper,
   Tag,
@@ -68,8 +69,8 @@ const Dashboard: React.FC = () => {
         keyExtractor={(videoData : Video) => videoData.id}
         renderItem={({ item } : { item : Video}) => (
           <VideoContainer>
+            <SignImage source={{uri: `https://img.youtube.com/vi/${item.videoURL}/hqdefault.jpg`}} />
             <VideoTitle>{item.title}</VideoTitle>
-
             <TagsWrapper>
               {item.tags.map(tag => (
                 <Tag>{tag}</Tag>

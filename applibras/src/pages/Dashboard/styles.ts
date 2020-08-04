@@ -20,6 +20,13 @@ export const VideoContainer = styled.View`
   padding: 5px;
 `;
 
+export const SignImage = styled.Image`
+  height: 180px;
+  width: 100%;
+  border-radius: 6px;
+  resize-mode: cover;
+`;
+
 export const VideoTitle = styled.Text`
   margin: 5px 0 0;
   font-family: 'OpenSans-SemiBold';
