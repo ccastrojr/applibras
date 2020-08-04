@@ -1,5 +1,6 @@
 import React from 'react';
-import { Linking } from 'react-native';
+import { TouchableOpacity, Linking } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -61,7 +62,12 @@ const data = [
 ];
 
 const Dashboard: React.FC = () => {
+  const navigation = useNavigation();
   
+  function handleNavigateToSinal(item: Video){
+    navigation.navigate('Sinal', item);
+  }
+
   async function handleComposeMail(){
 
     let url = 'mailto:lidialopes@acad.ifma.edu.br?subject=Sugestão de Inclusão de Sinal'
@@ -79,15 +85,17 @@ const Dashboard: React.FC = () => {
         data={data}
         keyExtractor={(videoData : Video) => videoData.id}
         renderItem={({ item } : { item : Video}) => (
-          <VideoContainer>
-            <SignImage source={{uri: `https://img.youtube.com/vi/${item.videoURL}/hqdefault.jpg`}} />
-            <VideoTitle>{item.title}</VideoTitle>
-            <TagsWrapper>
-              {item.tags.map(tag => (
-                <Tag>{tag}</Tag>
-              ))}
-            </TagsWrapper>
-          </VideoContainer>
+          <TouchableOpacity activeOpacity={0.7} onPress={() => handleNavigateToSinal(item)}>
+            <VideoContainer>
+              <SignImage source={{uri: `https://img.youtube.com/vi/${item.videoURL}/hqdefault.jpg`}} />
+              <VideoTitle>{item.title}</VideoTitle>
+              <TagsWrapper>
+                {item.tags.map(tag => (
+                  <Tag>{tag}</Tag>
+                ))}
+              </TagsWrapper>
+            </VideoContainer>
+          </TouchableOpacity>
         )}
       />
 
