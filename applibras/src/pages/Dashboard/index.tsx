@@ -1,4 +1,5 @@
 import React from 'react';
+import { Linking } from 'react-native';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -60,6 +61,16 @@ const data = [
 ];
 
 const Dashboard: React.FC = () => {
+  
+  async function handleComposeMail(){
+
+    let url = 'mailto:lidialopes@acad.ifma.edu.br?subject=Sugestão de Inclusão de Sinal'
+
+    if(await Linking.canOpenURL(url)){
+      Linking.openURL(url);
+    }    
+  }
+
   return (
     <Container>
       <Input name="busca" icon="mail" placeholder="pesquisar sinal" />
@@ -80,7 +91,7 @@ const Dashboard: React.FC = () => {
         )}
       />
 
-      <Button>Sugerir Inclusão</Button>
+      <Button onPress={handleComposeMail}>Sugerir Inclusão</Button>
     </Container>
   );
 };
