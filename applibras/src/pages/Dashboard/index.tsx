@@ -5,6 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
+import api from '../../services/api';
+
 import {
   Container,
   VideoList,
@@ -64,6 +66,8 @@ const data = [
 const Dashboard: React.FC = () => {
   const navigation = useNavigation();
   
+  //const [data, setData] = useState<Video[]>();
+
   function handleNavigateToSinal(item: Video){
     navigation.navigate('Sinal', item);
   }
@@ -76,6 +80,17 @@ const Dashboard: React.FC = () => {
       Linking.openURL(url);
     }    
   }
+
+/*  useEffect(() => {
+    api.get('').then(response => (
+      setData(response.data)
+    ))
+  }, []);
+
+  if(!data){
+    return null;
+  }
+*/
 
   return (
     <Container>
@@ -91,7 +106,7 @@ const Dashboard: React.FC = () => {
               <VideoTitle>{item.title}</VideoTitle>
               <TagsWrapper>
                 {item.tags.map(tag => (
-                  <Tag>{tag}</Tag>
+                  <Tag key={tag}>{tag}</Tag>
                 ))}
               </TagsWrapper>
             </VideoContainer>
