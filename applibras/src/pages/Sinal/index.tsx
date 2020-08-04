@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container } from './../Dashboard/styles';
 
 const Sinal: React.FC = () => {
   return <Container />;
