@@ -40,8 +40,8 @@ const Dashboard: React.FC = () => {
 
       <VideoList
         data={data}
-        keyExtractor={videoData => videoData.id}
-        renderItem={({ item }) => (
+        keyExtractor={(videoData : Video) => videoData.id}
+        renderItem={({ item } : { item : Video}) => (
           <VideoContainer>
             <VideoPlayer>
               <IconPlay name="play" size={60} color="#424242" />
