@@ -17,6 +17,9 @@ import {
 export interface Video {
   id: string;
   title: string;
+  videoURL: string;
+  imageURL: string;
+  description: string;
   tags: string[];
 }
 
