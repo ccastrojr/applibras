@@ -26,11 +26,38 @@ export interface Video {
 const data = [
   {
     id: '1',
-    title: 'Laço de Repetição',
-    tags: ['estrutura de repetição', 'básico'],
+    title: 'Algoritmo',
+    videoURL: '6tOVdzbbWOM',
+    imageURL: 'https://i.imgur.com/eA2Mmdq.png',
+    description: 'Qualquer procedimento computacional bem definido que toma algum valor ou conjunto de valores como entrada e produz algum valor ou conjunto de valores como saída. Sequência de passos computacionais que transformam entrada na saída',
+    tags: ['algoritmo', 'básico'],
   },
-  { id: '2', title: 'If e Else', tags: ['estrutura de decisão', 'básico'] },
-  { id: '3', title: 'Operações Básicas', tags: ['matemática', 'básico'] },
+  {
+    id: '2',
+    title: 'Bloco',
+    videoURL: 'Znn9wh_y7DI',
+    imageURL: 'https://i.imgur.com/9kGUkZB.png',
+    description: 'Conjunto de ações com uma função definida',
+    tags: ['bloco', 'sintaxe', 'básico'],
+
+  },
+  {
+    id: '3',
+    title: 'Executar',
+    videoURL: 'IHm6wr7FD5Q',
+    imageURL: 'https://i.imgur.com/FtcqKTK.png',
+    description: 'A execução de um programa compilado se faz invocando-o como se fosse um processo do sistema',
+    tags: ['executar', 'execução', 'básico'],
+  },
+  {
+    id: '4',
+    title: 'Função',
+    videoURL: '1Ja42BjMdzY',
+    imageURL: 'https://i.imgur.com/V5Ab68T.png',
+    description: 'Conjunto de comandos agrupados em um bloco, que recebe um nome particular e executa uma tarefa específica',
+    tags: ['função', 'sintaxe','básico'],
+
+  },
 ];
 
 const Dashboard: React.FC = () => {
