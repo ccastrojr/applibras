@@ -20,20 +20,12 @@ export const VideoContainer = styled.View`
   padding: 5px;
 `;
 
-export const VideoPlayer = styled.View`
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+export const SignImage = styled.Image`
   height: 180px;
   width: 100%;
-
-  background: #e0e0e0;
   border-radius: 6px;
-  padding-bottom: 5px;
-  border: 1px solid #d0d0d0;
+  resize-mode: cover;
 `;
-
-export const IconPlay = styled(FeatherIcon)``;
 
 export const VideoTitle = styled.Text`
   margin: 5px 0 0;
