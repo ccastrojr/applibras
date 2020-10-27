@@ -15,10 +15,16 @@ class Video {
   title: string;
 
   @Column()
-  url: string;
+  video_url: string;
 
   @Column()
-  assunto: string;
+  image_url: string;
+
+  @Column()
+  description: string;
+
+  @Column("varchar", { array: true })
+  tags: string[];
 
   @CreateDateColumn()
   created_at: Date;
