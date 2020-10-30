@@ -33,7 +33,9 @@ const Sinal: React.FC = () => {
   
   async function handleComposeMail(){
 
-    const url = 'mailto:lidialopes@acad.ifma.edu.br?subject=Sugestão de Correção'
+    let to = 'lidialopes@acad.ifma.edu.br', subject = 'Sugestão de Correção';
+
+    const url = `mailto:${to}?subject=${subject}`
 
     if(await Linking.canOpenURL(url)){
       Linking.openURL(url);
