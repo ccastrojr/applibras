@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import { FlatList } from 'react-native';
-import FeatherIcon from 'react-native-vector-icons/Feather';
 
 import { Video } from './index';
 

@@ -94,7 +94,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <Container>
-      <Input name="busca" icon="mail" placeholder="pesquisar sinal" />
+      <Input name="busca" icon="search" placeholder="Pesquisar sinal" />
 
       <VideoList
         data={data}
